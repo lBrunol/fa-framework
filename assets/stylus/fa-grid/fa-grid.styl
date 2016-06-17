@@ -1,0 +1,73 @@
+/// Fa Grid
+/// Dependências
+@import '_config';
+
+/// Base
+// Grid
+rg-grid(res) {
+	for col in (1 .. $cols) {
+		$size-res = (100% / ($cols / col));
+
+		.col-{res}-{col} {
+			width: $size-res;
+		}
+		
+		.col-{res}-offset-{col} {
+			margin-left: $size-res;
+		}
+	}
+}
+
+reset-grid(res) {
+	$width-full-{res} {
+		width: 100%;
+	}
+	
+	$margin-{res} {
+		margin-left: 0;
+	}
+
+	for col in (1 .. $cols) {
+		.col-{res}-{col} {
+			@extend $width-full-{res};
+		}
+		
+		.col-{res}-offset-{col} {
+			@extend $margin-{res};
+		}
+	}
+}
+
+// Containers
+.container-full {
+	width: 100%;
+}
+
+.container {
+	@extend .container-full;
+	max-width: $width;
+	margin: 0 auto;
+}
+
+// Linha
+.row {
+	overflow: hidden;
+}
+
+// Colunas
+.col {
+	float: left;
+	padding: 0 $space;
+}
+
+rg-grid('d');
+
+@media screen and (max-width: 768px) {
+	reset-grid('d');
+	rg-grid('t');
+}
+
+@media screen and (max-width: 480px) {
+	reset-grid('t');
+	rg-grid('m');
+}

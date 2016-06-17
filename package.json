@@ -1,0 +1,27 @@
+{
+  "name": "fa-framework",
+  "version": "0.1.1",
+  "description": "O Framework da equipe alfa",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelosds/fa-framework.git"
+  },
+  "keywords": [
+    "css",
+    "grid",
+    "responsive",
+    "stylus",
+    "framework",
+    "foster"
+  ],
+  "author": "Foster",
+  "license": "MIT",
+  "homepage": "https://github.com/angelosds/fa-framework",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-webserver": "^0.9.1"
+  }
+}
