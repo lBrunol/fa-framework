@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Animação</title>
+	<!-- <script type="text/javascript" src="teste.js"></script> -->
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			document.getElementsByClassName('btn-modal')[0].addEventListener('click', openModal);
+			document.getElementsByClassName('btn-modal-remover')[0].addEventListener('click', closeModal);
+		};		
+		function openModal(){
+			var modal;
+			modal = document.getElementsByClassName('modal')[0];
+			modal.style.display = 'block';
+			modal.className = 'modal open';
+		}
+
+		function closeModal(){
+			var modal;
+			modal = document.getElementsByClassName('modal')[0];
+			modal.className = 'modal close';
+		}
+
+	</script>
+	<style type="text/css">
+		.modal { 
+			background: #19768c; 
+			width: 500px; 
+			height: 200px;
+			margin: auto;
+			opacity: 0;
+		}
+
+		p { color: #fff; }
+
+		.open { 
+			animation: fadeInTop 0.5s forwards;
+		}
+
+		.close { 
+			animation: fadeOutTop 0.5s forwards;
+		}
+
+		@keyframes fadeOutTop {
+			0% {
+  				transform: translateY(0) scale(1);
+  				opacity: 1;
+			}
+
+			50% {
+				opacity: 1;
+				transform: scale(1);
+			}
+
+		 	100% {
+  				transform: translateY(-100%) scale(.1);
+  				opacity: 0;
+			}
+		}
+
+		@keyframes fadeInTop {
+			0% {
+  				transform: translateY(-100%) scale(.1);
+  				opacity: 0;
+			}
+
+		 	100% {
+  				transform: translateY(0) scale(1);
+  				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="modal">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quod fuga quasi aliquam! Dolorum magnam expedita reiciendis laboriosam delectus tempora. Quibusdam cumque magnam non laborum animi sunt officia eius doloremque.</p>
+	</div>
+	<button class="btn-modal">Abrir</button>
+	<button class="btn-modal-remover">Remover</button>
+</body>
+</html>
